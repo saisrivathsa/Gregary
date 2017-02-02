@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Create Event</title>
+</head>
+
+<body>
+{% load staticfiles %}
+<script src="{% static '/gregary/js/jquery.min.js' %}"></script>
+<script src="{% static '/gregary/js/jquery.datetimepicker.full.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static '/gregary/css/jquery.datetimepicker.css' %}"/>
+
+<form action = "{% url 'gregary:event_create' %}" method="post">
+    {% csrf_token %}
+    Select a sport:
+    <select name="sub_category" >
+        <option value="cricket">Cricket</option>
+        <option value="badminton">Badminton</option>
+        <option value="volleyball">Volleyball</option>
+    </select>
+    <br><br><br>
+    Name :
+    <input type="text" name="student" />
+    <br><br><br>
+    Phone number:<input type="number" name="phone_number" />
+    <br><br><br>
+    Enrollment number : <input type="number" name="enrollment_number" />
+    <br><br><br>
+    Start time : <input type="text" name="start_time" id="start_time"/>
+    <script type="text/javascript">
+    $('#start_time').datetimepicker({
+    format:'Y-m-d H:i',
+    });
+    </script>
+    <br><br><br>
+    End time : <input type="text" name="end_time" id="end_time"/>
+    <br><br><br>
+
+
+    <script type="text/javascript">
+    $('#end_time').datetimepicker({
+    format:'Y-m-d H:i',
+    });
+    </script>
+
+    <input type="submit" value="Vote" />
+</form>
+{% if error %}<p><strong>{{ error }}</strong></p>{% endif %}
+</body>
+</html>

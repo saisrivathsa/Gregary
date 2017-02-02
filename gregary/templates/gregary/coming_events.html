@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upcoming events</title>
+</head>
+<body>
+
+{% if latest_event_list %}
+
+{% for event in latest_event_list %}
+
+<p>Name of the student :{{ event.student }}<br>
+Phone number :{{ event.phone_number }}<br>
+Enrollment number: {{ event.enrollment_number }}</p>
+{% endfor %}
+{% else %}
+<p> data not received </p>
+
+{% endif %}
+<a href='{% url 'gregary:register_event' %}'> Register again?</a>
+</body>
+</html>
