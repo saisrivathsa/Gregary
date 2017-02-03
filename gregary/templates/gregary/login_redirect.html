@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gregary</title>
+
+</head>
+
+<body>
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'gregary/css/fonts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gregary/css/login_applet.css' %}">
+	<a id="loginApplet" href="javascript:showLoginApplet();">Contact!</a>
+    
+	<div class="NoPopUp" id="LoginNPU" style="display: none;"">
+		<center>  
+			<h2 id="LoginTitle">ACCOUNT LOGIN</h2>
+			<form>
+				<div class="formContainer">
+    				<label class="formElementLabel">EMAIL</label><br>
+    				<input type="text" name="uemail" placeholder="E-mail ID" class="formElement" required>
+    				<br>
+    				<label class="formElementLabel">PASSWORD</label><br>
+    				<input type="password" name="password" placeholder= "Password" class="formElement"	required>
+    				<br>
+    				<label class="formElementLabel">PHONE NUMBER</label><br>
+    				<input type="text" name="uphnumber" placeholder= "Phone Number" class="formElement"	required>
+    				<br>
+    				<button type="button" name="submit" class="formButton" id="LoginButton" href="http://docs.kali.org/">LOGIN</button>
+    				<br>
+    				<span id="LoginLinks">
+    				<a class="loginLink" href="#">Forgot password?</a>
+    				<br>
+    				<a class="loginLink" href="#">Not a member? Sign Up!</a>
+    				<br>
+    				</span>
+  				</div>
+			</form>
+		</center></div>
+	<script type="text/javascript" src="{% static 'gregary/js/vendor/jquery-3.1.1.js' %}"></script>
+	<script type="text/javascript" src="{% static 'gregary/js/login_applet.js' %}"></script>
+</body>
+</html>

@@ -8,6 +8,9 @@ from django.views import generic
 from django.db.models import F
 from django.utils import timezone
 '''
+def vinam_sample(request):
+    return render(request, 'gregary/login_redirect.html')
+    
 def index(request):
     return render (request, 'gregary/index.html')
 
