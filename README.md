@@ -5,5 +5,5 @@
 * Top bar
 
 ### Back-End :
-  * Login form
-  * Create user form
+  *  ~~Login form~~
+  * ~~Create user form~~
