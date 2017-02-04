@@ -1,4 +1,4 @@
 from django.contrib import admin
-from gregary.models import Sport
+from gregary.models import Event
 
-admin.site.register(Sport)
+admin.site.register(Event)
