@@ -79,10 +79,11 @@ span {
 
 #LoginNPU {
 	width: 340px;
-	height: 475px;
+	height: 390px;
 }
 
 #LoginTitle {
+	
 	position: relative;
 	font-family: "Raleway-Regular";
 	font-size: 26px;
@@ -92,7 +93,7 @@ span {
 	margin-bottom: 0px;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 0px 0px 4px 4px;
-	box-shadow: 0px 1px 20px rgba(100,100,100,0.25);		
+	box-shadow: 0px 1px 20px rgba(100,100,100,0.25);
 }
 
 #LoginButton {
