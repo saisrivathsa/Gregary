@@ -54,7 +54,7 @@ span {
 
 .formElement {
 	width: 240px;
-	height: 29px;
+	height: 40px;
 	border-color: #444444;
 	box-shadow: 0px 1px 8px #AAAAAA;
 	padding-left: 10px;
@@ -79,11 +79,11 @@ span {
 
 #LoginNPU {
 	width: 340px;
-	height: 640px;
+	height: 390px;
 }
 
 #LoginTitle {
-
+	
 	position: relative;
 	font-family: "Raleway-Regular";
 	font-size: 26px;

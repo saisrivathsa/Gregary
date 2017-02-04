@@ -9,44 +9,57 @@
 <script src="{% static '/gregary/js/jquery.min.js' %}"></script>
 <script src="{% static '/gregary/js/jquery.datetimepicker.full.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static '/gregary/css/jquery.datetimepicker.css' %}"/>
-<form action = "{% url 'gregary:event_create' %}" method="post">
-    {% csrf_token %}
-    Select the category of the event :
-    <select id='category' name='category'>
-        <option value='food' >Food
-        <option value='computer_games'> Computer games
-        <option value="games">Games
-    </select><br>
-    <br>
-    Select the sub category:
-    <select id='sub_category' name='sub_category'>
-    </select>
-    <script src="{% static '/gregary/js/subchanger.js' %}"></script>
-    <br><br><br>
-    Name :
-    <input type="text" name="student" />
-    <br><br><br>
-    Phone number:<input type="number" name="phone_number" />
-    <br><br><br>
-    Enrollment number : <input type="number" name="enrollment_number" />
-    <br><br><br>
-    Start time : <input type="text" name="start_time" id="start_time"/>
-    <script type="text/javascript">
-    $('#start_time').datetimepicker({
-    format:'Y-m-d H:i',
-    });
-    </script>
-    <br><br><br>
-    End time : <input type="text" name="end_time" id="end_time"/>
-    <br><br><br>
-    <script type="text/javascript">
-    $('#end_time').datetimepicker({
-    format:'Y-m-d H:i',
-    });
-    </script>
+<link rel="stylesheet" type="text/css" href="{% static 'gregary/css/fonts.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'gregary/css/login_applet.css' %}">
 
-    <input type="submit" value="Vote" />
-</form>
+<div class="NoPopUp" id="LoginNPU" >
+<center>
+    <h2 id="LoginTitle">REGISTER EVENT</h2>
+  <form action="{% url 'gregary:event_create' %}" method="post">
+    {% csrf_token %}
+    <div class="formContainer">
+        <label class="formElementLabel">CATEGORY</label><br>
+          <select id='category' name='category'  class="formElement" required>
+            <option value='food' >Food
+            <option value='computer_games'> Computer games
+            <option value="games">Games
+        </select>
+        <label class="formElementLabel">SUB-CATEGORY</label><br>
+          <select id='sub_category' name='sub_category'  class="formElement" required>
+        </select>
+        <br>
+        <label class="formElementLabel">NAME</label><br>
+        <input type="text" name="student" placeholder="Name" class="formElement" required>
+        <br>
+        <label class="formElementLabel">ENROLLMENT NUMBER</label><br>
+        <input type="text" name="enrollment_number" placeholder="Enrollment number" class="formElement" required>
+        <br>
+        <label class="formElementLabel">PHONE NUMBER</label><br>
+        <input type="text" name="phone_number" placeholder= "Phone Number" class="formElement"	required>
+        <br>
+        <label class="formElementLabel">Start time</label><br>
+        <input type="text" name="start_time"  id="start_time" placeholder= "" class="formElement"	required>
+        <br>
+        <label class="formElementLabel">End time</label><br>
+        <input type="text" name="end_time"  id="end_time" placeholder= "" class="formElement"	required>
+        <br>
+        <input type="submit" name="submit" class="formButton" id="LoginButton" >
+        <br>
+        <!--
+        <span id="LoginLinks">
+        <a class="loginLink" href="#">Forgot password?</a>
+        <br>
+        <a class="loginLink" href="{% url 'auth_model:sign_up'%}">Not a member? Sign Up!</a>
+        <br>
+        </span>
+        <script type="text/javascript" src="{% static 'gregary/js/login_applet.js' %}"></script>-->
+      </div>
+  </form>
+</center></div>
+<script src="{% static '/gregary/js/subchanger.js' %}"></script>
+<script src="{% static '/gregary/js/dates.js' %}"></script>
+<script type="text/javascript" src="{% static 'gregary/js/vendor/jquery-3.1.1.js' %}"></script>
+<br>
 {% if error %}<p><strong>{{ error }}</strong></p>{% endif %}
 </body>
 </html>
