@@ -5,10 +5,59 @@
     <title>Home</title>
 </head>
 <body>
-
+  {% load staticfiles %}
 <a href='{% url 'gregary:register_event' %}'> Register Event</a>
 <br>
 <a href='{% url 'gregary:coming_events' %}' > Upcoming Events </a>
 <br><p><a href="{% url 'auth_model:logout' %}"> Logout </a>
+<!-- change starts here -->
+      <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/fonts.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/login_applet1.css' %}">
+
+  	<div class="NoPopUp" id="LoginNPU" style="display:none" >
+  		<center>
+  			<h2 id="LoginTitle">ACCOUNT LOGIN</h2>
+  			<form action="{% url 'auth_model:authenticate_method' %}" method="post">
+  				{% csrf_token %}
+  				<div class="formContainer">
+  						<label class="formElementLabel">USERNAME</label><br>
+  						<input type="text" name="username" placeholder="Username" class="formElement" required>
+  						<br>
+      				<!--<label class="formElementLabel">EMAIL</label><br>
+      				<input type="text" name="email" placeholder="E-mail ID" class="formElement" required>
+      				<br>-->
+      				<label class="formElementLabel">PASSWORD</label><br>
+      				<input type="password" name="password" placeholder= "Password" class="formElement"	required>
+      				<br>
+  						<!--
+      				<label class="formElementLabel">PHONE NUMBER</label><br>
+      				<input type="text" name="phone_number" placeholder= "Phone Number" class="formElement"	required>
+      				<br>-->
+      				<button type="submit" name="submit" class="formButton" id="LoginButton" >LOGIN</button>
+      				<br>
+      				<span id="LoginLinks">
+      				<a class="loginLink" href="#">Forgot password?</a>
+      				<br>
+      				<a class="loginLink" href="{% url 'auth_model:sign_up'%}">Not a member? Sign Up!</a>
+      				<br>
+      				</span>
+    				</div>
+  			</form>
+  		</center></div>
+  	<script type="text/javascript" src="{% static 'auth_model/js/vendor/jquery-3.1.1.js' %}"></script>
+  	<script type="text/javascript" src="{% static 'auth_model/js/login_applet1.js' %}"></script>
+    <br>
+    {% if error %}<p><strong>{{ error }}</strong></p>{% endif %}
+  <script>
+
+  var x = false;
+  if ('{{ user.username }}'==''){
+  	x = true;
+  }
+  if (x){
+  	showLoginApplet();
+  }
+  </script>
+<!--change ends here-->
 </body>
 </html>

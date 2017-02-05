@@ -1,0 +1,122 @@
+html * {
+	font-family: 'Raleway-Light';
+}
+
+a {
+	text-decoration: none;
+	display: block;
+}
+
+a:link {
+    color: #0069FF;
+}
+
+a:visted{
+	color: #4169FF;
+}
+
+span {
+	display: block;
+}
+
+.NoPopUp {
+	position:fixed;
+    width: 340px;
+    height: 400px;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 4px;
+    background-color: #87CEEB;
+    background-clip: border-box;
+    box-shadow: 2px 2px 10px #888888;
+    overflow: hidden;
+}
+
+.formContainer {
+	position: relative;
+}
+
+.formElementLabel {
+	font-size: 14px;
+	font-family: 'Raleway-Regular';
+	color: #444444;
+	display: inline-block;
+	width: 260px;
+	text-align: left;
+	padding-left: 2px;
+	padding-bottom: 5px;
+	padding-top: 20px;
+	text-shadow: 0px 0px 10px #AAAAAA;
+}
+
+.formElement {
+	width: 240px;
+	height: 40px;
+	border-color: #444444;
+	box-shadow: 0px 1px 8px #AAAAAA;
+	padding-left: 10px;
+	font-size: 16px;
+	font-family: 'Raleway-Regular';
+	background-color: white;
+	border-width: 0px;
+	border-style: solid;
+	border-radius: 2px;
+}
+
+.formElement:focus {
+	box-shadow: 2px 4px 8px #AAAAAA;
+}
+
+.loginLink {
+	height: 6px;
+	padding-top: 0px;
+	font-size: 15px;
+	font-family: 'Raleway-Regular';
+}
+
+#LoginNPU {
+	width: 340px;
+	height: 400px;
+}
+
+#LoginTitle {
+	position: relative;
+	font-family: "Raleway-Regular";
+	font-size: 26px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 0px 0px 4px 4px;
+	box-shadow: 0px 1px 20px rgba(100,100,100,0.25);
+}
+
+#LoginButton {
+	font-family: 'Raleway-Medium';
+	font-size: 21px;
+	background-color: #333333;
+	color: white;
+	border-radius: 4px;
+	border: none;
+	height: 45px;
+	width: 150px;
+	margin-top: 30px;
+	margin-bottom: 28px;
+	box-shadow: 1px 1px 3px #333333;
+}
+
+#LoginButton:active {
+	box-shadow: 1px 1px 1px #222222;
+}
+
+#LoginLinks {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: relative;
+	background-color: rgba(255,255,255,0.25);
+	background-clip: border-box;
+}
