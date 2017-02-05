@@ -3,15 +3,12 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 #for authentication uses
 from django.contrib import auth
-# for new user
+# for  user
 from django.contrib.auth.models import User
 
 def logout(request) :
     auth.logout(request)
     return HttpResponseRedirect(reverse('auth_model:login'))
-
-def success(request) :
-    return render(request, 'auth_model/success.html', {'username' : request.user.username})
 
 #gets values from the form and checks whether user exists
 def authenticate_method(request) :
@@ -21,7 +18,7 @@ def authenticate_method(request) :
     # The default value when a user is not found is none
     if user is not None :
         auth.login( request, user)
-        return HttpResponseRedirect(reverse("auth_model:success"))
+        return HttpResponseRedirect(reverse("gregary:index"))
     else :
         return render(request, "auth_model/login.html", {'error':'Invalid Credentials'})
         # Takes back to login page with an error message

@@ -1,0 +1,14 @@
+@font-face {
+	font-family: Raleway-Light;
+	src: url({% static 'gregary/fonts/Raleway-Light.ttf' %}) format('truetype');
+}
+
+@font-face {
+	font-family: Raleway-Medium;
+	src: url({% static 'gregary/fonts/Raleway-Medium.ttf' %}) format('truetype');
+}
+
+@font-face {
+	font-family: Raleway-Regular;
+	src: url({% static 'gregary/fonts/Raleway-Regular.ttf' %}) format('truetype');
+}
