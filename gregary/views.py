@@ -12,6 +12,7 @@ from django.db.models import F
 '''
 def register_event(request):
     try :
+        # Checks if the user is logged in and redirects to login or register_event
         user = User.objects.get(username=request.user.username)
         return render(request, 'gregary/register_event.html')
     except:
