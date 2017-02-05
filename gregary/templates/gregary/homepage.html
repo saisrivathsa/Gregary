@@ -1,0 +1,53 @@
+<html>
+    <head>
+      {% load staticfiles %}
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/common.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/homepage.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/titlebar.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <!-- Title Bar -->
+            <a href="{% url 'gregary:index' %}" ><h1 id="main-title">Gregary</h1></a>
+            <div id="uinfo-outer-container">
+                <div id="uinfo-card">
+                    <center>
+                        <a href="{% url 'auth_model:logout' %}">
+                            <button class="custom-button">LOGOUT</button>
+                        </a>
+                    </center>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div id="content-bg"></div>
+        <div id="main-container">
+        </div>
+        <!-- Run JS scrips -->
+        <script type="text/javascript" src="{% static '/gregary/js/jquery-3.1.1.js' %}"></script>
+        <script type="text/javascript" src="{% static '/gregary/js/homepage.js' %}"></script>
+        <script type="text/javascript" src="{% static '/gregary/js/titlebar.js' %}"></script>
+        <script>
+        
+            // Handles User-Information
+            document.onload += (function() {
+                if ('{{ user.username }}'=='')
+                  drawLoginButton();
+                else 
+                  drawUserInfo('{{user.username.upper}}');
+                }());
+
+            // Handles login button linking
+            if ($("#login-button").length) {
+                $("#login-button").on('click', function() {
+                    window.location.href = "{% url 'gregary:index' %}";
+                });
+            }
+        </script>
+        
+}());
+</script>
+    </body>
+</html>

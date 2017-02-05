@@ -8,9 +8,9 @@
 <body>
 {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/fonts.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/login_applet.css' %}">
-    
-	<div class="NoPopUp" id="LoginNPU" >
+    <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/login_applet1.css' %}">
+
+	<div class="NoPopUp" id="LoginNPU" style="display:none" >
 		<center>
 			<h2 id="LoginTitle">ACCOUNT LOGIN</h2>
 			<form action="{% url 'auth_model:authenticate_method' %}" method="post">
@@ -40,9 +40,18 @@
   				</div>
 			</form>
 		</center></div>
-	<script type="text/javascript" src="{% static 'gregary/js/vendor/jquery-3.1.1.js' %}"></script>
-	<script type="text/javascript" src="{% static 'gregary/js/login_applet.js' %}"></script>
+	<script type="text/javascript" src="{% static 'auth_model/js/vendor/jquery-3.1.1.js' %}"></script>
+	<script type="text/javascript" src="{% static 'auth_model/js/login_applet1.js' %}"></script>
   <br>
   {% if error %}<p><strong>{{ error }}</strong></p>{% endif %}
+<script>
+var x = false;
+if ('{{ user.username }}'==''){
+	x = true;
+}
+if (x){
+	showLoginApplet();
+}
+</script>
 </body>
 </html>

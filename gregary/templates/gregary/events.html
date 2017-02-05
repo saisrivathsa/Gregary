@@ -1,0 +1,103 @@
+<html>
+    <head>
+      {% load staticfiles %}
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/common.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/homepage.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/titlebar.css' %}">
+        <link rel='stylesheet' type='text/css' href="{% static '/gregary/css/navbar.css' %}">
+        <link rel='stylesheet' type='text/css' href="{% static '/gregary/css/events.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <!-- Title Bar -->
+            <a href="{% url 'gregary:index' %}" ><h1 id="main-title">Gregary</h1></a>
+            <div id="uinfo-outer-container">
+                <div id="uinfo-card">
+                    <center>
+                        <a href="{% url 'auth_model:logout' %}">
+                            <button class="custom-button">LOGOUT</button>
+                        </a>
+                    </center>
+                </div>
+            </div>
+
+            <!-- Nav Bar -->
+            <div id="navbar-container">
+                <a class="navbar-element" href="{% url 'gregary:coming_events' 'sports' %}">SPORTS</a>
+                <a class="navbar-element" href="{% url 'gregary:coming_events' 'video_games' %}">VIDEO GAMES</a>
+                <a class="navbar-element" href="{% url 'gregary:coming_events' 'split_a_meal' %}">SPLIT-A-MEAL</a>
+                <a class="navbar-element" href="{% url 'gregary:coming_events' 'music' %}">MUSIC</a>
+                <a class="navbar-element" href="{% url 'gregary:coming_events' 'all' %}">OTHERS</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div id="content-bg"><!--{% block content %}
+			   {% endblock %}--></div>
+        <div id="main-contents">
+
+             <!-- Present Category Name on top -->
+             <div id="category-identifier">
+                 LISTED EVENTS IN <br>
+                 <p id="pres-category-name">SPORTS</p>
+             </div>
+
+             <!-- Event Cards -->
+             <div id="event-card-container">
+                 
+                 {% for event in latest_event_list %}
+                      <div class="event-card">
+                         <div class="card-user-info">
+                             <img src="{% static 'gregary/images/dp.jpg' %}">
+                             <p class="card-user-name">{{ event.student.upper }}</p>
+                             <br>
+                             <p class="card-user-email">{{ event.phone_number }}</p>
+                         </div>
+
+                         <div class="card-event-time">{{ event.start_time }} - {{ event.end_time }}</div>
+
+                         <ul>
+                             <li>{{ event.sub_category }}</li> <!--
+                             <li>Football</li>
+                             <li>Jogging</li>
+                             <li>Chessing</li>
+                             <li>Skying</li> -->
+                         </ul>
+                     </div>
+                 {% endfor %}
+            </div>
+            
+            
+            <div id="reg-link-container">
+                <a href='{% url 'gregary:register_event' %}'><button id="reg-link" class="custom-button">CREATE A NEW EVENT</button></a>
+            </div>
+             
+        </div>       
+
+        <!-- Run JS scripts -->
+
+        <script type="text/javascript" src="{% static '/gregary/js/jquery-3.1.1.js' %}"></script>
+        <script type="text/javascript" src="{% static '/gregary/js/homepage.js' %}"></script>
+        <script type="text/javascript" src="{% static '/gregary/js/titlebar.js' %}"></script>
+        
+        <script>
+        
+            // Handles User-Information
+            document.onload += (function() {
+                if ('{{ user.username }}'=='')
+                  drawLoginButton();
+                else 
+                  drawUserInfo('{{user.username.upper}}');
+                }());
+
+            // Handles login button linking
+            if ($("#login-button").length) {
+                $("#login-button").on('click', function() {
+                    window.location.href = "{% url 'gregary:index' %}";
+                });
+            }
+        </script>
+        
+    </body>
+</html>
