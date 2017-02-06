@@ -1,8 +1,6 @@
 header {
-    background-color: #222222;
-    padding: 5px 0px 5px 0px;
-    height: 60px;
-    display: table;
+    background-color: #111111;
+    height: 65px;
     width: 100%;
 /*    box-shadow: 0px 0px 10px black;
 */
@@ -10,59 +8,51 @@ header {
 
 #main-title {
     font-family: 'Infinite Stroke Bolder';
-    font-size: 45px;
-    margin-left: 30px;
-    margin-bottom: auto;
-    margin-top: auto;
-    vertical-align: middle;
     color: #EEEEEE;
+    background-image: url('titleback.png');
+    background-size: cover;
+    margin: 0;
+    padding: 0px 15px 1px 35px;
+    width: 220px;
+    font-size: 45px;
     float: left;
-    position: relative;
-    display: table-cell;
+    position: absolute;
+    display: inline-block;
 }
 
 #uinfo-outer-container {
-    width: 150px;
-    right: 30px;
-    line-height: 100%;
-    vertical-align: middle;
-    position: relative;
+    min-width: 60px;
+    height: 55px;
     float: right;
-}
-
-#login-container {
-    background-color: #333333;
-    height: 45px;
-    width: 150px;
-    text-align: center;
-    margin: auto;
+    padding: 5px 35px 5px 10px;
     position: relative;
 }
 
 #login-button {
+    margin-top: 8px;
+    margin-right: 5px;
     font-size: 16px;
     background-color: none;
     width: 120px;
-    height: 45px;
+    height: 41px;
 }
 
 #profile-picture {
-    height: 55px;
-    top: 5px;
-    position: relative;
+    height: 47px;
+    margin: 4px 8px 0px 0px;
     float: left;
+}
+
+#uinfo-container {
+    height: 55px;
+    position: relative;
+    display: table;
 }
 
 .uinfo {
     font-family: 'Roboto ExtraLight';
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 16px;
     color: #EEEEEE;
-    margin: 0;
-}
-
-#uinfo {
-    float: left;
-    text-align: left;
-    line-height: 60%;
-    margin-top: 30px;
+    display: table-row;
 }

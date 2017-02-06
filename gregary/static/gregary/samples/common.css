@@ -11,19 +11,31 @@ h1 {
     font-weight: normal;
 }
 
+a {
+    text-decoration: none;
+}
+
 .div-link {
     text-decoration: none;
 }
 
 .custom-button {
-    background-color: #ffa617;
+    background-color: #FFA617;
     color: #EEEEEE;
     font-family: 'Roboto Medium';
     padding: 10px 10px;
     border-radius: 1px;
     border: none;
     cursor: pointer;
-    box-shadow: 1px 1px 0px #AAAAAA;
+    box-shadow: 0 0 1px transparent;
+    
+    /* Animations */
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
 }
 
 .custom-button:hover {
@@ -33,6 +45,10 @@ h1 {
 
 .custom-button:active {
     box-shadow: none;
+}
+
+.bold {
+    font-weight: 600;
 }
 
 @font-face {
