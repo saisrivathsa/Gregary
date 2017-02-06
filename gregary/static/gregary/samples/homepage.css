@@ -1,28 +1,26 @@
 body {
     background-color: #FFA617;
+    padding-top: 65px;
 }
 
-#main-container-bg {
-    background-color: #EEE;
+#content-bg {
     width: 1000px;
+    height: 100%;
+    background-color: #EEEEEE;
+    position: fixed;
+    left: 0;
+    right: 0;
     margin-left: auto;
     margin-right: auto;
-    height: 1000px;
 }
 
 #main-container {
+    background-color: green;
     width: 1000px;
-    height: 600px;
-    padding: 20px 0px;
+    padding: 65px 0px 0px 0px;;
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
-    display: table;
-    display: fixed;
-}
-
-.main-row {
-    display: table-row;
+    text-align: center;
 }
 
 /* CSS for Main Activity Cards */
@@ -30,10 +28,9 @@ body {
 .card {
     width: 156px;
     height: 208px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: 30px 40px 30px 40px;
     vertical-align: middle;
-    display: table-cell;
+    display: inline-block;
 }
 
 .card-content {
