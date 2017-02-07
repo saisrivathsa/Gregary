@@ -41,10 +41,19 @@
     margin: 0px auto 30px auto;
     min-height: 200px;
     padding-bottom: 2px;
+    
+    /* For animation */
+    -webkit-transform: perspective(5px) translateZ(0);
+    transform: perspective(5px) translateZ(0);
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-property: color, border-left-color;
+    transition-property: color, border-left-color;
+    
 }
 
 .event-card:hover {
-    border-left-color: #c4c4c4;
+    border-left-color: #555;
     cursor: pointer;
 }
 
@@ -89,4 +98,27 @@
 .event-card ul li {
     margin: 0px;
     padding: 5px 0px;
+}
+
+#reg-link-container {
+    width: 1000px;
+    height: 50px;
+    top: 45px;
+    text-align: center;
+    margin: 0 auto 150px auto;
+    position: relative;
+}
+
+#reg-link {
+    font-size: 30px;
+    border-radius: 4px;
+    width: 500px;
+    padding: 20px 5px;
+    display: inline-block;
+    position: relative;
+}
+
+#reg-link:hover {
+    background-color: #555;
+    color: #FFA617;
 }

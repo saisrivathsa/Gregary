@@ -39,7 +39,7 @@ def create_new_user(request) :
         password = request.POST.get('password', '' )
         # Logging in the user after creating the new user
         user = auth.authenticate( username=username, password=password )
-        return HttpResponse('<h2>Created new user %s </h2><br><a href="../sign_up/">  create another account?</a>' %user.username)
+        return HttpResponseRedirect(reverse('gregary:index'))
     except :
         return render( request, 'auth_model/sign_up.html', {'error':'Error making account. Try again'} )
         # Returning to signup page in case of error in making the account

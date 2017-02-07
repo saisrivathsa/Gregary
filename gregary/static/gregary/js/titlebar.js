@@ -1,4 +1,3 @@
-
 function drawLoginButton() {
     // This function will create the login-button into HTML
     'use strict';
@@ -7,8 +6,7 @@ function drawLoginButton() {
     login_button.className = 'custom-button';
     login_button.id = 'login-button';
     login_button.href = '/auth/login';
-    //TODO: move button when active
-
+    
     // Put in text
     var login_button_text = document.createTextNode('LOGIN');
     login_button.appendChild(login_button_text);
@@ -26,7 +24,8 @@ function drawUserInfo(username) {
     var profile_picture = document.createElement('img');
     profile_picture.id = 'profile-picture';
     profile_picture.src = '/static/gregary/images/dp.jpg';     // Change this dynamically, depending on the current user
-
+    profile_picture.onclick += toggelUserCard;
+    
     // Put the image in the uinfo-outer-container
     document.getElementById('uinfo-outer-container').appendChild(profile_picture);
 
@@ -57,9 +56,24 @@ function drawUserInfo(username) {
 
     // Put this container in the uinfo-outer-container
     document.getElementById('uinfo-outer-container').appendChild(uinfo_container);
+    
+    $("#profile-picture").on("click", toggelUserCard);
 }
 
-
+var ucVis = false;
+function toggelUserCard() {
+    // Toggles the user card to be diaplyed or not
+    'use strict';
+    
+    if (ucVis) {
+        $("#uinfo-card").fadeOut(96);
+        ucVis = false;
+    } else {
+        $("#uinfo-card").fadeIn(96);
+        ucVis = true;
+    }
+    
+}
 
 //document.onload += (function () {
     //'use strict';

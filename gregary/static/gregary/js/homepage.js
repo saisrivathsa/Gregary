@@ -109,11 +109,11 @@ function activityCard(card_name, card_id, icon_image_url, parent_id) {
 }
 
 document.body.onload += activityCard('sports', 'sports', '/static/gregary/images/sports-back.png', 'main-container');
-document.body.onload += activityCard('video games', 'video_games', '/static/gregary/images/sports-back.png', 'main-container');
-document.body.onload += activityCard('split-a-meal', 'split_a_meal', '/static/gregary/images/sports-back.png', 'main-container');
-document.body.onload += activityCard('music', 'music', '/static/gregary/images/sports-back.png', 'main-container');
-document.body.onload += activityCard('concert', 'concert', '/static/gregary/images/sports-back.png', 'main-container');
-document.body.onload += activityCard('movie', 'movie', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('video games', 'video_games', '/static/gregary/images/vid-games-back.png', 'main-container');
+document.body.onload += activityCard('split-a-meal', 'split_a_meal', '/static/gregary/images/split-meal-back.png', 'main-container');
+document.body.onload += activityCard('music', 'music', '/static/gregary/images/music-back.png', 'main-container');
+document.body.onload += activityCard('concert', 'concert', '/static/gregary/images/concerts-back.png', 'main-container');
+document.body.onload += activityCard('movie', 'movie', '/static/gregary/images/movie-back.png', 'main-container');
 
 
 //document.body.onload += (function () {

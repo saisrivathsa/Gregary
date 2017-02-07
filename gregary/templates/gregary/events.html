@@ -11,8 +11,16 @@
     <body>
         <header>
             <!-- Title Bar -->
-            <h1 id="main-title">Gregary</h1>
-            <div id="uinfo-outer-container"></div>
+            <a href="{% url 'gregary:index' %}" ><h1 id="main-title">Gregary</h1></a>
+            <div id="uinfo-outer-container">
+                <div id="uinfo-card">
+                    <center>
+                        <a href="{% url 'auth_model:logout' %}">
+                            <button class="custom-button">LOGOUT</button>
+                        </a>
+                    </center>
+                </div>
+            </div>
 
             <!-- Nav Bar -->
             <div id="navbar-container">
@@ -27,7 +35,7 @@
         <!-- Main Content -->
         <div id="content-bg"><!--{% block content %}
 			   {% endblock %}--></div>
-         <div id="main-contents">
+        <div id="main-contents">
 
              <!-- Present Category Name on top -->
              <div id="category-identifier">
@@ -36,47 +44,60 @@
              </div>
 
              <!-- Event Cards -->
-             {% for event in latest_event_list %}
              <div id="event-card-container">
-                  <div class="event-card">
-                     <div class="card-user-info">
-                         <img src="{% static 'gregary/images/dp.jpg' %}">
-                         <p class="card-user-name">{{ event.student.upper }}</p>
-                         <br>
-                         <p class="card-user-email">{{ event.phone_number }}</p>
+                 
+                 {% for event in latest_event_list %}
+                      <div class="event-card">
+                         <div class="card-user-info">
+                             <img src="{% static 'gregary/images/dp.jpg' %}">
+                             <p class="card-user-name">{{ event.student.upper }}</p>
+                             <br>
+                             <p class="card-user-email">{{ event.phone_number }}</p>
+                         </div>
+
+                         <div class="card-event-time">{{ event.start_time }} - {{ event.end_time }}</div>
+
+                         <ul>
+                             <li>{{ event.sub_category }}</li> <!--
+                             <li>Football</li>
+                             <li>Jogging</li>
+                             <li>Chessing</li>
+                             <li>Skying</li> -->
+                         </ul>
                      </div>
-
-                     <div class="card-event-time">{{ event.start_time }} - {{ event.end_time }}</div>
-
-                     <ul>
-                         <li>{{ event.sub_category }}</li> <!--
-                         <li>Football</li>
-                         <li>Jogging</li>
-                         <li>Chessing</li>
-                         <li>Skying</li> -->
-                     </ul>
-                 </div>
-           </div>
-             {% endfor %}
-         </div>
-         <a href='{% url 'gregary:register_event' %}'> Register </a>
-         <br><br>
-         <a href="{% url 'gregary:index' %}" > Home </a>
+                 {% endfor %}
+            </div>
+            
+            
+            <div id="reg-link-container">
+                <a href='{% url 'gregary:register_event' %}'><button id="reg-link" class="custom-button">CREATE A NEW EVENT</button></a>
+            </div>
+             
+        </div>       
 
         <!-- Run JS scripts -->
 
         <script type="text/javascript" src="{% static '/gregary/js/jquery-3.1.1.js' %}"></script>
         <script type="text/javascript" src="{% static '/gregary/js/homepage.js' %}"></script>
         <script type="text/javascript" src="{% static '/gregary/js/titlebar.js' %}"></script>
+        
         <script>
-        document.onload += (function() {
-        if ('{{ user.username }}'==''){
-          drawLoginButton();
-        }
-        else {
-          drawUserInfo('{{user.username.upper}}');
-        }
-        }());
+        
+            // Handles User-Information
+            document.onload += (function() {
+                if ('{{ user.username }}'=='')
+                  drawLoginButton();
+                else 
+                  drawUserInfo('{{user.username.upper}}');
+                }());
+
+            // Handles login button linking
+            if ($("#login-button").length) {
+                $("#login-button").on('click', function() {
+                    window.location.href = "{% url 'gregary:index' %}";
+                });
+            }
         </script>
+        
     </body>
 </html>

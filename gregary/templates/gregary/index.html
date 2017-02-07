@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
-<body>
+<body bgcolor="black">
   {% load staticfiles %}
-<a href='{% url 'gregary:register_event' %}'> Register Event</a>
-<br>
-<a href='{% url 'gregary:coming_events' 'all' %}' > Upcoming Events </a>
-<br><p><a href="{% url 'auth_model:logout' %}"> Logout </a>
 <!-- change starts here -->
       <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/fonts.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/login_applet1.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static '/gregary/css/common.css' %}">
 
+        <header>
+        <center><h1 id="title">Gregory</h1></center>
+    </header>
+    
   	<div class="NoPopUp" id="LoginNPU" style="display:none" >
   		<center>
   			<h2 id="LoginTitle">ACCOUNT LOGIN</h2>
@@ -36,10 +37,9 @@
       				<button type="submit" name="submit" class="formButton" id="LoginButton" >LOGIN</button>
       				<br>
       				<span id="LoginLinks">
-      				<a class="loginLink" href="#">Forgot password?</a>
-      				<br>
-      				<a class="loginLink" href="{% url 'auth_model:sign_up'%}">Not a member? Sign Up!</a>
-      				<br>
+                        <a class="loginLink" href="#"><p>Forgot password?</p></a>
+                        <a class="loginLink" href="{% url 'auth_model:sign_up'%}"><p>Not a member? Sign Up!</p></a>
+                        <br>
       				</span>
     				</div>
   			</form>
@@ -49,13 +49,12 @@
     <br>
     {% if error %}<p><strong>{{ error }}</strong></p>{% endif %}
   <script>
-
+      
   var x = false;
   if ('{{ user.username }}'==''){
-  	x = true;
-  }
-  if (x){
   	showLoginApplet();
+  } else {
+      window.location.href = "{% url 'gregary:home' %}";
   }
   </script>
 <!--change ends here-->

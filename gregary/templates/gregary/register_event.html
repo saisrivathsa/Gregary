@@ -4,13 +4,14 @@
 <title>Create Event</title>
 </head>
 
-<body>
+<body bgcolor="black">
 {% load staticfiles %}
 <script src="{% static '/gregary/js/jquery.min.js' %}"></script>
 <script src="{% static '/gregary/js/jquery.datetimepicker.full.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static '/gregary/css/jquery.datetimepicker.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'gregary/css/fonts.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'gregary/css/login_applet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gregary/css/common.css' %}">
 
 <div class="NoPopUp" id="LoginNPU" >
 <center>
@@ -43,7 +44,7 @@
         <label class="formElementLabel">End time</label><br>
         <input type="text" name="end_time"  id="end_time" placeholder= "" class="formElement"	required>
         <br>
-        <input type="submit" name="submit" class="formButton" id="LoginButton" >
+        <input type="submit" name="submit" class="custom-button" id="LoginButton" >
         <br>
         <!--
         <span id="LoginLinks">
