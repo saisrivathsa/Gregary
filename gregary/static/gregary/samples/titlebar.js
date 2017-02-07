@@ -1,9 +1,3 @@
-function isLoggedIn() {
-    'use strict';
-    
-    return false;
-}
-
 function drawLoginButton() {
     // This function will create the login-button into HTML
     'use strict';

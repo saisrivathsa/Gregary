@@ -110,10 +110,9 @@ function activityCard(card_name, card_id, icon_image_url, parent_id) {
 
 document.body.onload += activityCard('sports', 'sports', './sports-back.png', 'main-container');
 document.body.onload += activityCard('video games', 'vid-games', './sports-back.png', 'main-container');
-document.body.onload += activityCard('music', 'music', './sports-back.png', 'main-container');
 document.body.onload += activityCard('split-a-meal', 'meal', './sports-back.png', 'main-container');
+document.body.onload += activityCard('music', 'music', './sports-back.png', 'main-container');
 document.body.onload += activityCard('concert', 'con', './sports-back.png', 'main-container');
-
 document.body.onload += activityCard('movie', 'movie', './sports-back.png', 'main-container');
 
 
