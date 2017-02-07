@@ -1,5 +1,5 @@
 body {
-    background-color: #FFA617;
+    background-color: #000000;
     padding-top: 65px;
 }
 
@@ -15,12 +15,12 @@ body {
 }
 
 #main-container {
-    background-color: green;
     width: 1000px;
     padding: 65px 0px 0px 0px;;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    position: relative;
 }
 
 /* CSS for Main Activity Cards */

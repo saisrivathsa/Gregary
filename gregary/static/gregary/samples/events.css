@@ -1,0 +1,92 @@
+#category-identifier {
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    font-size: 35px;
+    background-color: #ffa617;
+    color: white;
+    padding: 20px 0px 10px 0px;
+    border-bottom: 4px solid black;
+    height: 140px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    top: 65px;
+    position: relative;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+}
+
+#category-identifier p {
+    font-size: 80px;
+    font-family: 'Roboto Medium';
+    padding: 0px;
+    margin: 0px;
+}
+
+#event-card-container {
+    width: 1000px;
+    padding: 70px 0px 40px 0px;
+    min-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 65px;
+    position: relative;
+}
+
+.event-card {
+    width: 700px;
+    border-radius: 2px;
+    border-left: 40px solid #ffa617;
+    background-color: white;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.1);
+    margin: 0px auto 30px auto;
+    min-height: 200px;
+    padding-bottom: 2px;
+}
+
+.event-card:hover {
+    border-left-color: #c4c4c4;
+    cursor: pointer;
+}
+
+.card-user-info {
+    height: 120px;
+    position: relative;
+}
+
+.card-user-info img {
+    width: 100px;
+    margin: 10px 20px 10px 10px;
+    border-radius: 2px;
+    float: left;
+}
+
+.card-user-name {
+    margin-top: 10px;
+    font-size: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.card-user-email {
+    color: grey;
+    font-family: 'Roboto Light';
+    font-size: 17px;
+    margin: -30px 0px 0px 0px;
+    position: relative;
+}
+
+.card-event-time {
+    background-color: #F7F7F7;
+    padding: 5px 0px 5px 10px ;
+    font-size: 17px;
+    font-family: 'Roboto Medium';
+}
+
+.event-card ul {
+    list-style-type: square;
+}
+
+.event-card ul li {
+    margin: 0px;
+    padding: 5px 0px;
+}

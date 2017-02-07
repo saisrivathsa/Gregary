@@ -15,7 +15,7 @@
     display: inline-block;
     vertical-align: bottom;
     display: table-cell;
-    padding-bottom: 6px;
+    padding-bottom: 10px;
 }
 
 .navbar-element:hover {
