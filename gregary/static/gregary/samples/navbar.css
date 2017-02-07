@@ -1,0 +1,23 @@
+#navbar-container {
+    height: 65px;
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: table;
+}
+
+.navbar-element {
+    color: #EEE;
+    opacity: 0.85;
+    font-family: 'Roboto Light';
+    font-size: 22px;
+    display: inline-block;
+    vertical-align: bottom;
+    display: table-cell;
+    padding-bottom: 6px;
+}
+
+.navbar-element:hover {
+    opacity: 1;
+}

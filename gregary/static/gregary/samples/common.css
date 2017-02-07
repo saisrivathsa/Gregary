@@ -105,3 +105,8 @@ a {
     font-family: 'Roboto Regular';
     src: url('Roboto-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('Roboto-Light.ttf');
+}
