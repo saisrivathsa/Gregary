@@ -1,0 +1,63 @@
+header {
+    background-color: #111111;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    height: 65px;
+    min-width: 1000px;
+    width: 100%;
+/*    box-shadow: 0px 0px 10px black;
+*/
+    position: fixed;
+    z-index: 100;
+}
+
+#main-title {
+    font-family: 'Infinite Stroke Bolder';
+    color: #EEEEEE;
+    background-image: url('titleback.png');
+    background-size: cover;
+    margin: 0;
+    padding: 0px 15px 1px 35px;
+    width: 220px;
+    font-size: 45px;
+    float: left;
+    position: absolute;
+    display: inline-block;
+}
+
+#uinfo-outer-container {
+    min-width: 60px;
+    height: 55px;
+    float: right;
+    padding: 5px 35px 5px 10px;
+    position: absolute;
+    right: 0px;
+}
+
+#login-button {
+    margin-top: 8px;
+    margin-right: 5px;
+    font-size: 16px;
+    background-color: none;
+    width: 120px;
+    height: 41px;
+}
+
+#profile-picture {
+    height: 47px;
+    margin: 4px 8px 0px 0px;
+    float: left;
+}
+
+#uinfo-container {
+    height: 55px;
+    position: relative;
+    display: table;
+}
+
+.uinfo {
+    font-family: 'Roboto ExtraLight';
+    font-size: 12px;
+    line-height: 16px;
+    color: #EEEEEE;
+    display: table-row;
+}

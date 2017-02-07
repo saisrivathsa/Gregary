@@ -1,0 +1,112 @@
+html * {
+    font-family: 'Roboto Regular';
+}
+
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.div-link {
+    text-decoration: none;
+}
+
+.custom-button {
+    background-color: #FFA617;
+    color: #EEEEEE;
+    font-family: 'Roboto Medium';
+    padding: 10px 10px;
+    border-radius: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 1px transparent;
+    
+    /* Animations */
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+
+.custom-button:hover {
+    background-color: #EEEEEE;
+    color: black;
+}
+
+.custom-button:active {
+    box-shadow: none;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Infinite Stroke';
+    src: url('Infinite_Stroke.otf');
+}
+
+@font-face {
+    font-family: 'Infinite Stroke Bolder';
+    src: url('Infinite_Stroke_Bolder.otf');
+}
+
+@font-face {
+    font-family: 'Thinking of Betty';
+    src: url('Thinking_of_Betty.ttf');
+}
+
+@font-face {
+    font-family: 'Barking Cat';
+    src: url('Barking_Cat.otf');
+}
+
+@font-face {
+    font-family: 'Stardust';
+    src: url('Stardust.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway Light';
+    src: url('Raleway-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway Regular';
+    src: url('Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway Medium';
+    src: url('Raleway-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('Roboto-Light.ttf');
+}
