@@ -13,7 +13,7 @@ header {
 #main-title {
     font-family: 'Infinite Stroke Bolder';
     color: #EEEEEE;
-    background-image: url('titleback.png');
+    background-image: url('../images/titleback.png');
     background-size: cover;
     margin: 0;
     padding: 0px 15px 1px 35px;
@@ -55,7 +55,7 @@ header {
 }
 
 .uinfo {
-    font-family: 'Roboto ExtraLight';
+    font-family: 'Roboto Light';
     font-size: 12px;
     line-height: 16px;
     color: #EEEEEE;

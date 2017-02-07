@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 def logout(request) :
     auth.logout(request)
-    return HttpResponseRedirect(reverse('auth_model:login'))
+    return HttpResponseRedirect(reverse('gregary:home'))
 
 #gets values from the form and checks whether user exists
 def authenticate_method(request) :

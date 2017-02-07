@@ -8,7 +8,7 @@
   {% load staticfiles %}
 <a href='{% url 'gregary:register_event' %}'> Register Event</a>
 <br>
-<a href='{% url 'gregary:coming_events' %}' > Upcoming Events </a>
+<a href='{% url 'gregary:coming_events' 'all' %}' > Upcoming Events </a>
 <br><p><a href="{% url 'auth_model:logout' %}"> Logout </a>
 <!-- change starts here -->
       <link rel="stylesheet" type="text/css" href="{% static 'auth_model/css/fonts.css' %}">

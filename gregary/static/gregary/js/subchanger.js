@@ -1,5 +1,5 @@
 (function(){
-  var sub_categoryOptions = {"food":["Pizza","Paneer","Coming soon"], "computer_games":["Fifa","CS","COD"], "games":["Cricket","Volleyball","Chess"]};
+  var sub_categoryOptions = {"split_a_meal":["Pizza","Paneer","Coming soon"], "video_games":["Fifa","CS","COD"], "sports":["Cricket","Volleyball","Chess"]};
   var category = document.getElementById('category');
   var sub_category = document.getElementById('sub_category');
   //on change is a good event for this because you are guarenteed the value is different

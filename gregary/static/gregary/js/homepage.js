@@ -6,7 +6,7 @@ function activityCardBg(canvasId, image, w = 150, h = 200) {
     var canvas = document.getElementById(canvasId),
         ctx = canvas.getContext('2d');
     ctx.save();
-    
+
     // Size the canvas and the drawing area
     canvas.style.width = w+2;
     canvas.style.height = h+2;
@@ -63,36 +63,36 @@ function activityCardBg(canvasId, image, w = 150, h = 200) {
     var icon = new Image();
     icon.src = image;
     load_and_draw(icon);
-    
+
 }
 
 function activityCard(card_name, card_id, icon_image_url, parent_id) {
     // Draws and returns the entire activity card
-    
+
     // Card div
     var card = document.createElement('div');
-    card.className += 'card ';    
+    card.className += 'card ';
     document.getElementById(parent_id).appendChild(card);
-    
+
     var cent = document.createElement('center');
     card.appendChild(cent);
-    
+
     // Card content div
     var card_content = document.createElement('div');
     card_content.className += 'card-content';
     cent.appendChild(card_content);
-    
+
     // Link tag
     var link_tag = document.createElement('a');
-    link_tag.href = "http://www.google.com";
+    link_tag.href = "../events/"+card_id;
     card_content.appendChild(link_tag);
-    
+
     // Canvas
     var bg = document.createElement('canvas');
     bg.id = card_id;
     link_tag.appendChild(bg);
     activityCardBg(card_id, icon_image_url, 150, 200);
-    
+
     // Label
     var label = document.createElement('p'),
         label_text = document.createTextNode(card_name.toUpperCase());
@@ -100,25 +100,25 @@ function activityCard(card_name, card_id, icon_image_url, parent_id) {
     if (card_name.length > 8) {
         label.className += 'type2 ';
     }
-    
+
     label.appendChild(label_text);
     link_tag.appendChild(label);
-    
+
     return card;
-    
+
 }
 
-document.body.onload += activityCard('sports', 'sports', './sports-back.png', 'main-container');
-document.body.onload += activityCard('video games', 'vid-games', './sports-back.png', 'main-container');
-document.body.onload += activityCard('split-a-meal', 'meal', './sports-back.png', 'main-container');
-document.body.onload += activityCard('music', 'music', './sports-back.png', 'main-container');
-document.body.onload += activityCard('concert', 'con', './sports-back.png', 'main-container');
-document.body.onload += activityCard('movie', 'movie', './sports-back.png', 'main-container');
+document.body.onload += activityCard('sports', 'sports', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('video games', 'video_games', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('split-a-meal', 'split_a_meal', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('music', 'music', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('concert', 'concert', '/static/gregary/images/sports-back.png', 'main-container');
+document.body.onload += activityCard('movie', 'movie', '/static/gregary/images/sports-back.png', 'main-container');
 
 
-document.body.onload += (function () {
-                   document.getElementById('main-container-bg').style.height = (window.innerHeight+65 < document.getElementById('main-container').style.height) ? document.getElementById('main-container').style.height : window.innerHeight - 65;
-                   }());
+//document.body.onload += (function () {
+  //                 document.getElementById('main-container-bg').style.height = (window.innerHeight+65 < document.getElementById('main-container').style.height) ? document.getElementById('main-container').style.height : window.innerHeight - 65;
+    //               }());
 
 // On resize events
 /*

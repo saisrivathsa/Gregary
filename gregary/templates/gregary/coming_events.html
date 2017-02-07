@@ -1,18 +1,20 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Upcoming events</title>
 </head>
-<body>
-
+<body>-->
+{% extends 'gregary/events.html' %}
+{% block content %}
 {% if latest_event_list %}
 
 {% for event in latest_event_list %}
 
 <p>Name of the student :{{ event.student }}<br>
 Phone number :{{ event.phone_number }}<br>
-Enrollment number: {{ event.enrollment_number }}</p>
+Enrollment number: {{ event.sub_category }}<br>
+Start time: {{ event.start_time }}</p>
 {% endfor %}
 {% else %}
 <p> data not received </p>
@@ -21,5 +23,7 @@ Enrollment number: {{ event.enrollment_number }}</p>
 <a href='{% url 'gregary:register_event' %}'> Register </a>
 <br><br>
 <a href="{% url 'gregary:index' %}" > Home </a>
-</body>
+{% endblock %}
+<!--</body>
 </html>
+-->

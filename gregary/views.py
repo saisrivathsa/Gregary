@@ -18,11 +18,16 @@ def register_event(request):
     except:
         return render(request, 'auth_model/login.html')
 
-def coming_events(request):
-    # Deletes the events which ended
+def coming_events(request, cat):
     check_events(Event.objects.order_by('start_time'))
+    if cat == 'all':
+        latest_event_list = Event.objects.order_by('start_time')
+        # Deletes the events which ended
+    else :
+        latest_event_list = Event.objects.filter(category=cat).order_by('start_time')
+
+
     #Gets the list of coming events on basis of start time
-    latest_event_list = Event.objects.order_by('start_time')
     context = {'latest_event_list': latest_event_list}
     # Context contains the events' list
     return render(request, 'gregary/coming_events.html', context)
@@ -51,7 +56,7 @@ def event_create(request):
     if(parse_date(new_event.end_time) <= datetime.now()):
         return render(request, 'gregary/register_event.html', {'error' : 'Event can\'t end in the past'})
     new_event.save()
-    return HttpResponseRedirect(reverse('gregary:coming_events'))
+    return HttpResponseRedirect(reverse('gregary:coming_events', kwargs={'cat':request.POST['category']}) )
 #except:
     #        return render(request, 'gregary/register_event.html', {'error': 'Error while handling the form data please fill again'})
     # Saves the event
